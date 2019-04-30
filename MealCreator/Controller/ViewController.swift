@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import ChameleonFramework
 class ViewController: UIViewController {
 
     @IBOutlet weak var ingredientsTextField: UITextField!
@@ -20,15 +21,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     
     }
-
+    
     @IBAction func searchButtonClicked(_ sender: UIButton) {
         
         let text = ingredientsTextField.text!
-        if text != "" && text != "put smth here" {
+        if text != "" && text != "Your ingredients" {
             getData(withIngredients: text)
         }
         else {
-            ingredientsTextField.text = "put smth here"
+            ingredientsTextField.text = "Your ingredients"
         }
     }
     
