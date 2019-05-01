@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import ChameleonFramework
 class SwipeViewController: UIViewController {
 
     @IBOutlet weak var pageLabel: UILabel!
@@ -36,7 +37,12 @@ class SwipeViewController: UIViewController {
         imageView.addGestureRecognizer(swipe)
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        navigationController?.navigationBar.backgroundColor = UIColor.flatWhiteColorDark()
+        view.backgroundColor = UIColor(gradientStyle: .topToBottom, withFrame: view.frame, andColors: [UIColor.flatSandColorDark(), UIColor.flatYellow()])
+        imageView.image = UIImage(named: "image")
+    }
     
     
     

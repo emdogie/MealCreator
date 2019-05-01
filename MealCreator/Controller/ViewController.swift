@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         navigationController?.navigationBar.backgroundColor = UIColor.flatWhiteColorDark()
+        view.backgroundColor = UIColor(gradientStyle: .topToBottom, withFrame: view.frame, andColors: [UIColor.flatSandColorDark(), UIColor.flatYellow()])
         textLabel.textColor = UIColor.flatBlack()
         button.backgroundColor = UIColor.flatWhite()
         button.layer.cornerRadius = 10
