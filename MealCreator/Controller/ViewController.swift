@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         navigationController?.navigationBar.backgroundColor = UIColor.flatWhiteColorDark()
         view.backgroundColor = UIColor(gradientStyle: .topToBottom, withFrame: view.frame, andColors: [UIColor.flatSandColorDark(), UIColor.flatYellow()])
-        textLabel.textColor = UIColor.flatBlack()
+        textLabel.textColor = UIColor.flatWhite()
         button.backgroundColor = UIColor.flatWhite()
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
@@ -42,11 +42,11 @@ class ViewController: UIViewController {
     @IBAction func searchButtonClicked(_ sender: UIButton) {
         
         let text = ingredientsTextField.text!
-        if text != "" && text != "Your ingredients" {
+        if text != "" && text != "Put your ingredients here" {
             getData(withIngredients: text)
         }
         else {
-            ingredientsTextField.text = "Your ingredients"
+            ingredientsTextField.text = "Put your ingredients here"
         }
     }
     

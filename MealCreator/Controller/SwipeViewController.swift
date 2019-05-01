@@ -31,10 +31,14 @@ class SwipeViewController: UIViewController {
         pageLabel.isUserInteractionEnabled = true
         pageLabel.addGestureRecognizer(tap)
         
-        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(self.onSwipeView(sender:)))
-        swipe.direction = .left
+        let swipe_left = UISwipeGestureRecognizer(target: self, action: #selector(self.onSwipeViewLeft(sender:)))
+        swipe_left.direction = .left
         imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(swipe)
+        imageView.addGestureRecognizer(swipe_left)
+        let swipe_right = UISwipeGestureRecognizer(target: self, action: #selector(self.onSwipeViewRight(sender:)))
+        swipe_right.direction = .right
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(swipe_right)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,12 +46,13 @@ class SwipeViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = UIColor.flatWhiteColorDark()
         view.backgroundColor = UIColor(gradientStyle: .topToBottom, withFrame: view.frame, andColors: [UIColor.flatSandColorDark(), UIColor.flatYellow()])
         imageView.image = UIImage(named: "image")
+        titleLabel.textColor = UIColor.flatWhite()
     }
     
     
     
     //MARK: Swipe functions
-    @objc func onSwipeView(sender: UISwipeGestureRecognizer) {
+    @objc func onSwipeViewLeft(sender: UISwipeGestureRecognizer) {
         
         index += 1
         if index == 20 {
@@ -57,6 +62,18 @@ class SwipeViewController: UIViewController {
         pageLabel.text = arrayForSwipe[index].source_url
         
     }
+    
+    @objc func onSwipeViewRight(sender: UISwipeGestureRecognizer) {
+        
+        index -= 1
+        if index == -1 {
+            index = 19
+        }
+        titleLabel.text = arrayForSwipe[index].title
+        pageLabel.text = arrayForSwipe[index].source_url
+        
+    }
+    
     //MARK:- Page loading
     @objc func onClicLabel(sender: UITapGestureRecognizer) {
         
