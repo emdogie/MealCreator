@@ -22,9 +22,13 @@ class SwipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK:- First dish
         pageLabel.text = arrayForSwipe[0].source_url
         titleLabel.text = arrayForSwipe[0].title
-        
+        let url = NSURL(string: arrayForSwipe[0].image_url)!
+        imageView.af_setImage(withURL: url as URL)
+        imageView.layer.borderWidth = 10
+        imageView.layer.borderColor = UIColor.flatWhite()!.cgColor
         
         //MARK:- Gestures
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.onClicLabel(sender:)))
@@ -60,6 +64,8 @@ class SwipeViewController: UIViewController {
         }
         titleLabel.text = arrayForSwipe[index].title
         pageLabel.text = arrayForSwipe[index].source_url
+        let url = NSURL(string: arrayForSwipe[index].image_url)!
+        imageView.af_setImage(withURL: url as URL)
         
     }
     
@@ -71,6 +77,8 @@ class SwipeViewController: UIViewController {
         }
         titleLabel.text = arrayForSwipe[index].title
         pageLabel.text = arrayForSwipe[index].source_url
+        let url = NSURL(string: arrayForSwipe[index].image_url)!
+        imageView.af_setImage(withURL: url as URL)
         
     }
     
