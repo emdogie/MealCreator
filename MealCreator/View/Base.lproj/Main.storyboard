@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsQ-nC-qHL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsQ-nC-qHL">
                                 <rect key="frame" x="122" y="472" width="130" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
                                 <state key="normal" title="Search">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -28,26 +27,47 @@
                                     <action selector="searchButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="std-c0-i8S"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chefHat" translatesAutoresizingMaskIntoConstraints="NO" id="Pyr-AW-t2a">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chefHat" translatesAutoresizingMaskIntoConstraints="NO" id="Pyr-AW-t2a">
                                 <rect key="frame" x="97" y="98" width="180" height="180"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="Q8a-Um-MfF"/>
+                                    <constraint firstAttribute="height" constant="180" id="rhN-kZ-BwJ"/>
+                                </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your ingredients" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h43-un-fx5">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your ingredients" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h43-un-fx5">
                                 <rect key="frame" x="54" y="401" width="267" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What do you have in fridge?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OG8-Tl-gOv">
-                                <rect key="frame" x="15" y="315" width="344" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you have in fridge?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OG8-Tl-gOv">
+                                <rect key="frame" x="15.5" y="315.5" width="344" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="344" id="0Vq-h9-XNJ"/>
+                                    <constraint firstAttribute="height" constant="36" id="vE5-ce-cZV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fsQ-nC-qHL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="106" id="3Ml-bm-oaH"/>
+                            <constraint firstItem="Pyr-AW-t2a" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="34" id="A58-SE-f4b"/>
+                            <constraint firstItem="h43-un-fx5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="38" id="CmE-WY-aMV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h43-un-fx5" secondAttribute="trailing" constant="38" id="E2h-8O-HXe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fsQ-nC-qHL" secondAttribute="trailing" constant="107" id="H6e-LY-mEw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pyr-AW-t2a" secondAttribute="trailing" constant="82" id="IUM-UD-Z8M"/>
+                            <constraint firstItem="fsQ-nC-qHL" firstAttribute="top" secondItem="h43-un-fx5" secondAttribute="bottom" constant="41" id="Tcq-g8-tyC"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="h43-un-fx5" secondAttribute="bottom" constant="236" id="UgZ-pG-MFZ"/>
+                            <constraint firstItem="OG8-Tl-gOv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bDR-Rg-1ZQ"/>
+                            <constraint firstItem="h43-un-fx5" firstAttribute="top" secondItem="OG8-Tl-gOv" secondAttribute="bottom" constant="49.5" id="hNN-zZ-JLa"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fsQ-nC-qHL" secondAttribute="bottom" constant="144" id="oxx-c8-Av1"/>
+                            <constraint firstItem="OG8-Tl-gOv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pEl-Ll-JmZ"/>
+                            <constraint firstItem="OG8-Tl-gOv" firstAttribute="top" secondItem="Pyr-AW-t2a" secondAttribute="bottom" constant="37.5" id="uU5-Gj-Ptf"/>
+                            <constraint firstItem="Pyr-AW-t2a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="81" id="v9o-rc-A43"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="MealCreator" id="sfn-c2-ayO"/>
@@ -78,16 +98,14 @@
                                     <constraint firstAttribute="width" constant="240" id="yaH-jz-WbO"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-eu-XHY">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-eu-XHY">
                                 <rect key="frame" x="37" y="472" width="300" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nC5-fp-0Qg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nC5-fp-0Qg">
                                 <rect key="frame" x="37" y="74" width="300" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -96,7 +114,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yZw-Is-UHz" firstAttribute="centerY" secondItem="Oah-N9-YIZ" secondAttribute="centerY" id="0zK-bY-hub"/>
+                            <constraint firstItem="nC5-fp-0Qg" firstAttribute="leading" secondItem="Oah-N9-YIZ" secondAttribute="leadingMargin" constant="21" id="4wF-iK-VtM"/>
                             <constraint firstItem="yZw-Is-UHz" firstAttribute="centerX" secondItem="Oah-N9-YIZ" secondAttribute="centerX" id="Aik-cc-dkg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kpl-eu-XHY" secondAttribute="trailing" constant="22" id="JVJ-m6-I5k"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="kpl-eu-XHY" secondAttribute="bottom" constant="111" id="TSH-qC-UH9"/>
+                            <constraint firstItem="yZw-Is-UHz" firstAttribute="top" secondItem="nC5-fp-0Qg" secondAttribute="bottom" constant="7.5" id="ZNG-z0-lnO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nC5-fp-0Qg" secondAttribute="trailing" constant="22" id="hO6-3c-pg0"/>
+                            <constraint firstItem="kpl-eu-XHY" firstAttribute="leading" secondItem="Oah-N9-YIZ" secondAttribute="leadingMargin" constant="21" id="mh7-OK-5pO"/>
+                            <constraint firstItem="kpl-eu-XHY" firstAttribute="top" secondItem="yZw-Is-UHz" secondAttribute="bottom" constant="18.5" id="p25-Ju-wNa"/>
+                            <constraint firstItem="nC5-fp-0Qg" firstAttribute="top" secondItem="Oah-N9-YIZ" secondAttribute="topMargin" constant="10" id="tca-8x-PnZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2cI-Th-RPf"/>
                     </view>
